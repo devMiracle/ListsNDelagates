@@ -28,7 +28,14 @@ namespace DelegatesDemo
                 new Good(){ Id = 2, Title = "dsfg", Price = 100.05m },
                 new Good(){ Id = 4, Title = "abc", Price = 99.99m }
             };
-            MySort.UniversalSort(goods, (o1, o2) => (((Good)o1).Price).CompareTo(((Good)o2).Price));
+            //MySort.UniversalSort(goods, (o1, o2) => (((Good)o1).Price).CompareTo(((Good)o2).Price));
+
+
+
+            MySort.UniversalSortTwoArgs(goods,
+                (o1, o2) => (((Good)o1).Price.CompareTo(((Good)o2).Price)),
+                (o1, o2) => (((Good)o1).Title.CompareTo(((Good)o2).Title))
+                );
             foreach (var item in goods)
             {
                 Console.WriteLine(item);
