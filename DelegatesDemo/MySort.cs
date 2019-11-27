@@ -72,7 +72,7 @@ namespace DelegatesDemo
                 }
                 for (int i = 0; i < _items.Count - 1; i++)
                 {
-                    if (((Good)_items[i]).Price == ((Good)_items[i + 1]).Price)
+                    if (_firstComparator(_items[i], _items[i + 1]) == 0)
                     {
                         if (_secondComparator(_items[i], _items[i + 1]) > 0)
                         {
@@ -84,8 +84,6 @@ namespace DelegatesDemo
                     }
                 }
             } while (!sorted);
-            
         }
-        //_secondComparator(_items[i], _items[i + 1]) > 0
     }
 }
